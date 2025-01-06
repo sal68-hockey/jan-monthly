@@ -1,65 +1,146 @@
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f3f4f6;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .container {
-    text-align: center;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    padding: 30px;
-    width: 90%;
-    max-width: 400px;
-  }
-  
-  /* Heading */
-  h1 {
-    font-size: 2rem;
-    color: #007bff;
-    margin-bottom: 20px;
-  }
-  
-  /* Instructions */
-  .instructions {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 20px;
-  }
-  
-  /* Buttons */
-  .buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .btn {
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #ffffff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Result Display */
-  .result {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-  }
+  font-family: 'Arial', sans-serif;
+  background-color: navy;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background-color: black;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 30px 20px;
+  width: 90%;
+  max-width: 400px;
+  color: yellow;
+}
+
+/* Heading */
+h1 {
+  font-size: 2.5rem;
+  color: yellow;
+  margin-bottom: 20px;
+}
+
+/* Instructions */
+.instructions {
+  font-size: 1.2rem;
+  color: lightyellow;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-rock {
+  background-color: #1e90ff;
+}
+
+.btn-paper {
+  background-color: #ff4500;
+}
+
+.btn-scissors {
+  background-color: #32cd32;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Scoreboard */
+.scoreboard {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: yellow;
+}
+
+.scoreboard .label {
+  color: lightyellow;
+}
+
+/* Result Display */
+.result {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: yellow;
+  background: rgba(255, 255, 0, 0.1);
+  padding: 15px;
+  border: 2px solid yellow;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Popup Styles */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-content {
+  background: yellow;
+  color: black;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.popup-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.btn-close {
+  background-color: black;
+  color: yellow;
+  font-size: 1rem;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-close:hover {
+  background-color: yellow;
+  color: black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}

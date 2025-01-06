@@ -1,25 +1,40 @@
-<<!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rock Paper Scissors</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    <body>
-        <div class="container">
-            <h1>Rock, Paper, Scissors</h1>
-            <p class="instructions">Choose your move:</p>
-            <div class="buttons">
-                <button class="btn" onclick="playGame('rock')">Rock</button>
-                <button class="btn" onclick="playGame('paper')">Paper</button>
-                <button class="btn" onclick="playGame('scissors')">Scissors</button>
-            </div>
-            <div id="result" class="result"></div>
+<body>
+    <div class="container">
+        <h1>Rock, Paper, Scissors</h1>
+        <p class="instructions">Pick your weapon:</p>
+        <div class="buttons">
+            <button class="btn btn-rock" onclick="playGame('rock')">Rock</button>
+            <button class="btn btn-paper" onclick="playGame('paper')">Paper</button>
+            <button class="btn btn-scissors" onclick="playGame('scissors')">Scissors</button>
         </div>
-        <script src="script.js"></script>
-    </body>
 
-    </html>
+        <div class="scoreboard">
+            <p><span class="label">Player Wins:</span> <span id="player-score">0</span></p>
+            <p><span class="label">Computer Wins:</span> <span id="computer-score">0</span></p>
+        </div>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <!-- Popup -->
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <h2>Good job, Player!</h2>
+            <button class="btn btn-close" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
