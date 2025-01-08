@@ -1,42 +1,42 @@
-/* General Styles */
+/* Global Styles */
 body {
-  font-family: 'Georgia', serif;
-  background-color: #faf3e0;
-  color: #333;
   margin: 0;
   padding: 0;
+  font-family: 'Courier New', monospace;
+  background: linear-gradient(135deg, #3c3f41, #2b2d2f);
+  color: #f9f9f9;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: radial-gradient(circle, #f9e4c5, #e7c089);
+  overflow: hidden;
 }
 
 .container {
   text-align: center;
-  background-color: #fef4d1;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  border: 4px solid #333;
-  border-radius: 15px;
+  background: #4b5320; /* Olive Green */
+  border: 5px solid #8b8000; /* Military Gold */
+  border-radius: 10px;
   padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
   width: 90%;
   max-width: 500px;
-  color: #000;
-  font-style: italic;
 }
 
-/* Heading */
-h1 {
-  font-size: 2.8rem;
-  color: #333;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px #f0d58c;
+.header .title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f9f9f9;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-bottom: 3px solid #8b8000;
+  padding-bottom: 10px;
 }
 
-/* Instructions */
-.instructions {
-  font-size: 1.3rem;
-  color: #555;
+.subtitle {
+  font-size: 1.2rem;
+  color: #f9f9f9;
   margin-bottom: 20px;
 }
 
@@ -45,74 +45,67 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 15px;
+  margin-bottom: 20px;
 }
 
 .btn {
-  padding: 12px 25px;
-  font-size: 1.2rem;
+  padding: 15px 25px;
+  font-size: 1rem;
   font-weight: bold;
-  border: 2px solid #333;
-  border-radius: 8px;
+  border: 2px solid #8b8000;
+  border-radius: 5px;
   cursor: pointer;
   color: #fff;
-  text-shadow: 1px 1px #333;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn-rock {
-  background-color: #6b4226;
-}
-
-.btn-paper {
-  background-color: #b39256;
-}
-
-.btn-scissors {
-  background-color: #8f1d14;
+  background-color: #4b5320; /* Olive Green */
+  text-transform: uppercase;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  background-color: #556b2f; /* Dark Olive Green */
 }
 
-/* Scoreboard */
 .scoreboard {
-  margin-top: 20px;
-  font-size: 1.5rem;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
 }
 
-.scoreboard .label {
-  color: #333;
+.score h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #f9f9f9;
+  text-transform: uppercase;
 }
 
-/* Result Display */
+.score span {
+  font-size: 2rem;
+  color: #8b8000;
+}
+
+/* Result */
 .result {
-  margin-top: 20px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 15px;
-  border: 2px solid #333;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  padding: 10px;
+  border: 2px solid #8b8000;
+  background: #2b2d2f;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  text-shadow: 1px 1px #f0d58c;
+  color: #f9f9f9;
 }
 
-/* Popup Styles */
+/* Popup */
 .popup {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
 }
 
 .popup.hidden {
@@ -120,33 +113,43 @@ h1 {
 }
 
 .popup-content {
-  background: #fef4d1;
-  color: #333;
-  padding: 20px 40px;
-  border-radius: 10px;
+  background: #4b5320; 
+  border: 3px solid #8b8000;
+  color: #f9f9f9;
+  padding: 20px;
   text-align: center;
-  border: 3px solid #333;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
 }
 
-.popup-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px #f0d58c;
-}
-
-.btn-close {
-  background-color: #333;
-  color: #fef4d1;
+.btn-replay {
+  margin-top: 15px;
+  padding: 10px 20px;
   font-size: 1rem;
-  padding: 10px 15px;
-  border: none;
+  border: 2px solid #8b8000;
   border-radius: 5px;
+  background: #4b5320;
+  color: #f9f9f9;
+  text-transform: uppercase;
+  font-weight: bold;
   cursor: pointer;
-  text-shadow: 1px 1px #000;
 }
 
-.btn-close:hover {
-  background-color: #f0d58c;
-  color: #333;
+.btn-replay:hover {
+  background: #556b2f;
+}
+
+/* Animations */
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

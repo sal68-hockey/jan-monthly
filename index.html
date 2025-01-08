@@ -4,33 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
+    <title>Rock Paper Scissors - Military Theme</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
-        <h1>Rock, Paper, Scissors</h1>
-        <p class="instructions">Pick your weapon and battle to 3 wins!</p>
-        <div class="buttons">
-            <button class="btn btn-rock" onclick="playGame('rock')">Rock</button>
-            <button class="btn btn-paper" onclick="playGame('paper')">Paper</button>
-            <button class="btn btn-scissors" onclick="playGame('scissors')">Scissors</button>
-        </div>
-
-        <div class="scoreboard">
-            <p><span class="label">Player Wins:</span> <span id="player-score">0</span></p>
-            <p><span class="label">Computer Wins:</span> <span id="computer-score">0</span></p>
-        </div>
-
-        <div id="result" class="result"></div>
+        <header class="header">
+            <h1 class="title">Command & Conquer</h1>
+            <p class="subtitle">Rock, Paper, Scissors - Military Edition</p>
+        </header>
+        <main>
+            <div class="buttons">
+                <button class="btn btn-rock" onclick="playGame('rock')">Rock</button>
+                <button class="btn btn-paper" onclick="playGame('paper')">Paper</button>
+                <button class="btn btn-scissors" onclick="playGame('scissors')">Scissors</button>
+            </div>
+            <div class="scoreboard">
+                <div class="score">
+                    <h3>Player</h3>
+                    <span id="player-score">0</span>
+                </div>
+                <div class="score">
+                    <h3>Computer</h3>
+                    <span id="computer-score">0</span>
+                </div>
+            </div>
+            <div id="result" class="result"></div>
+        </main>
     </div>
 
-
+    <!-- Popup -->
     <div id="popup" class="popup hidden">
         <div class="popup-content">
             <h2 id="winner-message"></h2>
-            <button class="btn btn-close" onclick="resetGame()">Play Again</button>
+            <button class="btn btn-replay" onclick="resetGame()">Play Again</button>
         </div>
     </div>
 

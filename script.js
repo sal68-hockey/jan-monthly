@@ -1,13 +1,10 @@
-// Initialize player and computer scores
 let playerScore = 0;
 let computerScore = 0;
 
 function playGame(playerChoice) {
   const choices = ['rock', 'paper', 'scissors'];
   const computerChoice = choices[Math.floor(Math.random() * 3)];
-
-  let result = '';
-
+  let result;
 
   if (playerChoice === computerChoice) {
     result = `It's a tie! Both chose ${playerChoice}.`;
@@ -16,37 +13,35 @@ function playGame(playerChoice) {
     (playerChoice === 'paper' && computerChoice === 'rock') ||
     (playerChoice === 'scissors' && computerChoice === 'paper')
   ) {
-    result = `You win! ${playerChoice} beats ${computerChoice}.`;
     playerScore++;
+    result = `Victory! ${playerChoice} defeats ${computerChoice}.`;
   } else {
-    result = `You lose! ${computerChoice} beats ${playerChoice}.`;
     computerScore++;
+    result = `Defeat! ${computerChoice} overpowers ${playerChoice}.`;
   }
 
-  
-  document.getElementById('player-score').innerText = playerScore;
-  document.getElementById('computer-score').innerText = computerScore;
-
-  
-  document.getElementById('result').innerText = result;
+  document.getElementById('player-score').textContent = playerScore;
+  document.getElementById('computer-score').textContent = computerScore;
+  document.getElementById('result').textContent = result;
 
   if (playerScore === 3 || computerScore === 3) {
-    showWinner(playerScore > computerScore ? 'Player' : 'Computer');
+    declareWinner(playerScore > computerScore ? 'Player' : 'Computer');
   }
 }
 
+function declareWinner(winner) {
+  const popup = document.getElementById('popup');
+  const winnerMessage = document.getElementById('winner-message');
 
-function showWinner(winner) {
-  document.getElementById('winner-message').innerText = `${winner} wins the game!`;
-  document.getElementById('popup').classList.remove('hidden');
+  winnerMessage.textContent = `${winner} has won the battle!`;
+  popup.classList.remove('hidden');
 }
 
-// Reset the game
 function resetGame() {
   playerScore = 0;
   computerScore = 0;
-  document.getElementById('player-score').innerText = playerScore;
-  document.getElementById('computer-score').innerText = computerScore;
-  document.getElementById('result').innerText = '';
+  document.getElementById('player-score').textContent = playerScore;
+  document.getElementById('computer-score').textContent = computerScore;
+  document.getElementById('result').textContent = '';
   document.getElementById('popup').classList.add('hidden');
 }
