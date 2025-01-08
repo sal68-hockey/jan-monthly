@@ -4,41 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors - Military Theme</title>
+    <title>Rock Paper Scissors Command HQ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="background-animation"></div>
     <div class="container">
         <header class="header">
-            <h1 class="title">Command & Conquer</h1>
-            <p class="subtitle">Rock, Paper, Scissors - Military Edition</p>
+            <h1 class="title">Command HQ</h1>
+            <p class="subtitle">Engage in Tactical Rock, Paper, Scissors</p>
         </header>
         <main>
-            <div class="buttons">
-                <button class="btn btn-rock" onclick="playGame('rock')">Rock</button>
-                <button class="btn btn-paper" onclick="playGame('paper')">Paper</button>
-                <button class="btn btn-scissors" onclick="playGame('scissors')">Scissors</button>
-            </div>
-            <div class="scoreboard">
-                <div class="score">
-                    <h3>Player</h3>
-                    <span id="player-score">0</span>
-                </div>
-                <div class="score">
-                    <h3>Computer</h3>
-                    <span id="computer-score">0</span>
+            <div id="welcome-popup" class="popup">
+                <div class="popup-content">
+                    <h2>Welcome, Commander!</h2>
+                    <label for="player-name">Enter your name:</label>
+                    <input type="text" id="player-name" placeholder="Your Name" />
+                    <button class="btn btn-confirm" onclick="startGame()">Start Mission</button>
                 </div>
             </div>
-            <div id="result" class="result"></div>
+            <div id="game-content" class="hidden">
+                <div class="buttons">
+                    <button class="btn btn-rock" onclick="playGame('rock')">Rock</button>
+                    <button class="btn btn-paper" onclick="playGame('paper')">Paper</button>
+                    <button class="btn btn-scissors" onclick="playGame('scissors')">Scissors</button>
+                </div>
+                <div class="scoreboard">
+                    <div class="score">
+                        <h3 id="player-label">Player</h3>
+                        <span id="player-score">0</span>
+                    </div>
+                    <div class="score">
+                        <h3>Computer</h3>
+                        <span id="computer-score">0</span>
+                    </div>
+                </div>
+                <div id="result" class="result"></div>
+            </div>
         </main>
     </div>
 
-    <!-- Popup -->
-    <div id="popup" class="popup hidden">
+    <!-- Winner Popup -->
+    <div id="winner-popup" class="popup hidden">
         <div class="popup-content">
             <h2 id="winner-message"></h2>
-            <button class="btn btn-replay" onclick="resetGame()">Play Again</button>
+            <button class="btn btn-replay" onclick="resetGame()">Restart Mission soilder </button>
         </div>
     </div>
 
