@@ -8,7 +8,7 @@ function playGame(playerChoice) {
 
   let result = '';
 
-  // Determine the winner
+
   if (playerChoice === computerChoice) {
     result = `It's a tie! Both chose ${playerChoice}.`;
   } else if (
@@ -18,26 +18,35 @@ function playGame(playerChoice) {
   ) {
     result = `You win! ${playerChoice} beats ${computerChoice}.`;
     playerScore++;
-    showPopup();
   } else {
     result = `You lose! ${computerChoice} beats ${playerChoice}.`;
     computerScore++;
   }
 
-  // Update the scores on the screen
+  
   document.getElementById('player-score').innerText = playerScore;
   document.getElementById('computer-score').innerText = computerScore;
 
-  // Display the result
+  
   document.getElementById('result').innerText = result;
+
+  if (playerScore === 3 || computerScore === 3) {
+    showWinner(playerScore > computerScore ? 'Player' : 'Computer');
+  }
 }
 
-// Show popup when the player wins
-function showPopup() {
+
+function showWinner(winner) {
+  document.getElementById('winner-message').innerText = `${winner} wins the game!`;
   document.getElementById('popup').classList.remove('hidden');
 }
 
-// Close popup
-function closePopup() {
+// Reset the game
+function resetGame() {
+  playerScore = 0;
+  computerScore = 0;
+  document.getElementById('player-score').innerText = playerScore;
+  document.getElementById('computer-score').innerText = computerScore;
+  document.getElementById('result').innerText = '';
   document.getElementById('popup').classList.add('hidden');
 }

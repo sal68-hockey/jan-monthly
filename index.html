@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h1>Rock, Paper, Scissors</h1>
-        <p class="instructions">Pick your weapon:</p>
+        <p class="instructions">Pick your weapon and battle to 3 wins!</p>
         <div class="buttons">
             <button class="btn btn-rock" onclick="playGame('rock')">Rock</button>
             <button class="btn btn-paper" onclick="playGame('paper')">Paper</button>
@@ -26,11 +26,11 @@
         <div id="result" class="result"></div>
     </div>
 
-    <!-- Popup -->
+
     <div id="popup" class="popup hidden">
         <div class="popup-content">
-            <h2>Good job, Player!</h2>
-            <button class="btn btn-close" onclick="closePopup()">Close</button>
+            <h2 id="winner-message"></h2>
+            <button class="btn btn-close" onclick="resetGame()">Play Again</button>
         </div>
     </div>
 
