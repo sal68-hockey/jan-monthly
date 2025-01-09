@@ -1,68 +1,63 @@
 
-body {
+/* Reset */
+body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Stencil', sans-serif;
-  background-color: #1e1e1e;
-  color: #f9f9f9;
+  font-family: 'Staatliches', sans-serif;
+  background: #121212;
+  color: #fff;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  height: 100%;
 }
 
 .container {
   text-align: center;
-  background: rgba(25, 25, 25, 0.95);
-  border: 4px solid #ffbf00; /* Military Gold */
+  background: rgba(18, 18, 18, 0.9);
+  border: 5px solid #f1c40f;
   border-radius: 15px;
-  padding: 40px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-  width: 90%;
-  max-width: 600px;
+  padding: 30px;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 
-
+/* Background Animation */
 .background-animation {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(255, 183, 0, 0.2), transparent 50%);
-  animation: emberGlow 3s infinite alternate;
-  pointer-events: none;
+  background: radial-gradient(circle, rgba(243, 156, 18, 0.1), rgba(18, 18, 18, 1));
+  animation: ember-glow 5s infinite alternate;
   z-index: -1;
 }
 
-@keyframes emberGlow {
-  from {
-    opacity: 0.7;
+@keyframes ember-glow {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
   }
-  to {
+  100% {
+    transform: scale(1.1);
     opacity: 1;
   }
 }
 
-/* Header */
+/* Header Styling */
 .header .title {
   font-size: 3.5rem;
-  font-weight: bold;
-  color: #ffbf00; /* Gold */
-  margin: 0;
+  color: #f1c40f;
+  letter-spacing: 5px;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  border-bottom: 4px solid #ffbf00;
-  padding-bottom: 15px;
-  text-shadow: 3px 3px #000;
+  margin-bottom: 10px;
 }
 
 .subtitle {
   font-size: 1.5rem;
-  color: #f9f9f9;
+  color: #e2e2e2;
   margin-bottom: 30px;
-  letter-spacing: 1px;
 }
 
 /* Buttons */
@@ -70,27 +65,48 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 30px;
 }
 
 .btn {
-  padding: 20px 30px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  border: 3px solid #ffbf00;
-  border-radius: 8px;
-  cursor: pointer;
+  background: #1f2833;
+  border: 2px solid #f1c40f;
   color: #fff;
-  background-color: #3c3f41;
+  padding: 15px 20px;
+  font-size: 1.2rem;
   text-transform: uppercase;
-  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-  transform: scale(1.1);
-  background-color: #505357;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+  background: #f1c40f;
+  color: #1f2833;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(241, 196, 15, 0.7);
+}
+
+/* Scoreboard */
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(25, 25, 25, 0.95);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.score {
+  text-align: center;
+}
+
+.score h3 {
+  font-size: 1.5rem;
+  color: #f1c40f;
+}
+
+.score span {
+  font-size: 2rem;
 }
 
 /* Popups */
@@ -100,11 +116,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.95);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 10;
 }
 
 .popup.hidden {
@@ -112,34 +128,43 @@ body {
 }
 
 .popup-content {
-  background: rgba(30, 30, 30, 0.95);
-  border: 4px solid #ffbf00;
-  color: #f9f9f9;
-  padding: 30px;
+  background: #1f2833;
+  border: 4px solid #f1c40f;
+  border-radius: 15px;
+  padding: 20px;
   text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
-  animation: fadeInPopup 0.5s ease-out;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 
 .popup-content h2 {
-  font-size: 2rem;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.popup-content input {
+  padding: 10px;
+  width: 80%;
+  font-size: 1rem;
   margin-bottom: 20px;
 }
 
 .btn-replay {
-  margin-top: 20px;
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  border: 3px solid #ffbf00;
-  border-radius: 8px;
-  background: #3c3f41;
-  color: #f9f9f9;
-  text-transform: uppercase;
-  font-weight: bold;
+  padding: 10px 20px;
+  background: #1f2833;
+  color: #fff;
+  border: 2px solid #f1c40f;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .btn-replay:hover {
-  background: #505357;
+  background: #f1c40f;
+  color: #1f2833;
+}
+
+/* Result */
+.result {
+  margin-top: 30px;
+  font-size: 1.8rem;
+  font-weight: bold;
 }

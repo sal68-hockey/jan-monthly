@@ -4,7 +4,7 @@ let playerName = 'Player';
 
 function startGame() {
   const inputName = document.getElementById('player-name').value.trim();
-  playerName = inputName || 'Player';
+  playerName = inputName || 'Commander';
   document.getElementById('player-label').textContent = playerName;
   document.getElementById('welcome-popup').classList.add('hidden');
   document.getElementById('game-content').classList.remove('hidden');
@@ -23,10 +23,10 @@ function playGame(playerChoice) {
     (playerChoice === 'scissors' && computerChoice === 'paper')
   ) {
     playerScore++;
-    result = `Victory! ${playerChoice} beats ${computerChoice}.`;
+    result = `You win! ${playerChoice} beats ${computerChoice}.`;
   } else {
     computerScore++;
-    result = `Defeat! ${computerChoice} beats ${playerChoice}.`;
+    result = `You lose! ${computerChoice} beats ${playerChoice}.`;
   }
 
   document.getElementById('player-score').textContent = playerScore;
@@ -41,7 +41,7 @@ function playGame(playerChoice) {
 function declareWinner(winner) {
   const popup = document.getElementById('winner-popup');
   const winnerMessage = document.getElementById('winner-message');
-  winnerMessage.textContent = `${winner} is victorious! Mission Accomplished!`;
+  winnerMessage.textContent = winner === playerName ? `Victory! ${playerName} wins!` : 'Mission Failed! Computer wins!';
   popup.classList.remove('hidden');
 }
 
