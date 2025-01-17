@@ -15,6 +15,9 @@ function playGame(playerChoice) {
   const computerChoice = choices[Math.floor(Math.random() * 3)];
   let result;
 
+  document.getElementById('player-selection').textContent = playerChoice;
+  document.getElementById('computer-selection').textContent = computerChoice;
+
   if (playerChoice === computerChoice) {
     result = `It's a draw! Both chose ${playerChoice}.`;
   } else if (
@@ -51,5 +54,7 @@ function resetGame() {
   document.getElementById('player-score').textContent = playerScore;
   document.getElementById('computer-score').textContent = computerScore;
   document.getElementById('result').textContent = '';
+  document.getElementById('player-selection').textContent = 'Waiting...';
+  document.getElementById('computer-selection').textContent = 'Waiting...';
   document.getElementById('winner-popup').classList.add('hidden');
 }

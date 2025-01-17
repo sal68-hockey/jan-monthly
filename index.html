@@ -16,6 +16,7 @@
             <p class="subtitle">Test Your Strategy in Rock, Paper, Scissors</p>
         </header>
         <main>
+            <!-- Welcome Popup -->
             <div id="welcome-popup" class="popup">
                 <div class="popup-content">
                     <h2>Welcome, Recruit!</h2>
@@ -24,7 +25,20 @@
                     <button class="btn btn-confirm" onclick="startGame()">Begin Mission</button>
                 </div>
             </div>
+
+            <!-- Game Content -->
             <div id="game-content" class="hidden">
+                <div class="choices-display">
+                    <div class="choice player-choice">
+                        <h3 id="player-label">Player</h3>
+                        <span id="player-selection">Waiting...</span>
+                    </div>
+                    <div class="choice computer-choice">
+                        <h3>Computer</h3>
+                        <span id="computer-selection">Waiting...</span>
+                    </div>
+                </div>
+
                 <div class="command">
                     <h3>Choose Your Strategy:</h3>
                     <div class="buttons">
@@ -33,22 +47,23 @@
                         <button class="btn btn-scissors" onclick="playGame('scissors')">Scissors</button>
                     </div>
                 </div>
+
                 <div class="scoreboard">
                     <div class="score player">
                         <h3 id="player-label">Player</h3>
-                        <span id="player-score">0
-                        </span>
+                        <span id="player-score">0</span>
                     </div>
                     <div class="score computer">
                         <h3>Computer</h3>
                         <span id="computer-score">0</span>
                     </div>
                 </div>
+
                 <div id="result" class="result"></div>
             </div>
         </main>
 
-
+        <!-- Winner Popup -->
         <div id="winner-popup" class="popup hidden">
             <div class="popup-content">
                 <h2 id="winner-message"></h2>
