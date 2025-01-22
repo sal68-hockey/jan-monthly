@@ -1,4 +1,3 @@
-
 /* Reset */
 body, html {
   margin: 0;
@@ -17,7 +16,7 @@ body, html {
   background: rgba(18, 18, 18, 0.95);
   border: 5px solid #f1c40f;
   border-radius: 15px;
-  padding: 30px;
+  padding: 40px;
   max-width: 800px;
   width: 90%;
   position: relative;
@@ -49,7 +48,7 @@ body, html {
 
 /* Header Styling */
 .header .title {
-  font-size: 3.5rem;
+  font-size: 4rem;
   color: #f1c40f;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -57,26 +56,26 @@ body, html {
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   color: #e2e2e2;
   margin-bottom: 30px;
 }
 
-/* Buttons */
+
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .btn {
   background: #1f2833;
   border: 2px solid #f1c40f;
   color: #fff;
-  padding: 15px 20px;
-  font-size: 1.2rem;
+  padding: 20px 30px;
+  font-size: 1.3rem;
   text-transform: uppercase;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -93,7 +92,7 @@ body, html {
   display: flex;
   justify-content: space-around;
   margin: 20px 0;
-  padding: 15px;
+  padding: 20px;
   background: rgba(25, 25, 25, 0.95);
   border-radius: 10px;
 }
@@ -103,12 +102,12 @@ body, html {
 }
 
 .choice h3 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #f1c40f;
 }
 
 .choice span {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #e2e2e2;
   margin-top: 10px;
   display: block;
@@ -120,7 +119,7 @@ body, html {
   justify-content: space-around;
   background: rgba(25, 25, 25, 0.95);
   border-radius: 10px;
-  padding: 15px;
+  padding: 20px;
   margin-top: 20px;
 }
 
@@ -129,15 +128,15 @@ body, html {
 }
 
 .score h3 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #f1c40f;
 }
 
 .score span {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
-/* Popups */
+
 .popup {
   position: fixed;
   top: 0;
@@ -158,13 +157,24 @@ body, html {
 .popup-content {
   background: #1f2833;
   border: 4px solid #f1c40f;
-  border-radius: 15px;
-  padding: 20px;
+  border-radius: 20px;
+  padding: 30px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 
 .popup-content h2 {
   margin-bottom: 20px;
-  font-size: 1.8rem;
+  font-size: 2rem;
+}
+
+.popup-content input {
+  padding: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 2px solid #f1c40f;
+  outline: none;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
 }
